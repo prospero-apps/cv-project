@@ -1,6 +1,7 @@
 /* BODY */
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /*  MAIN CONTAINER */
@@ -52,8 +53,7 @@ body {
 #preview-description-panel,
 #preview-experience-panel,
 #preview-education-panel {
-  background-color: green;
-  height: 20px;
+  background-color: lightgreen;
 }
 
 #preview-header-panel {
@@ -64,6 +64,15 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.panel-header {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#preview .panel-header {
+  color: rgba(4, 70, 100, 0.877)
 }
 
 
