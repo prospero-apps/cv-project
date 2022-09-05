@@ -9,6 +9,9 @@ class PreviewDescriptionPanel extends Component {
         <PanelHeader
           title='Description'
         />
+        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
       </div> 
     );
   }

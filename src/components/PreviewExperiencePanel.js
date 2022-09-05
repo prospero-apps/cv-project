@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../styles.css';
+import DataPreviewExperience from './DataPreviewExperience';
 import PanelHeader from './PanelHeader';
 
 class PreviewExperiencePanel extends Component {
@@ -8,6 +9,13 @@ class PreviewExperiencePanel extends Component {
       <div id="preview-experience-panel">
         <PanelHeader
           title='Experience'
+        />
+        <DataPreviewExperience
+          from='xxxx'
+          to='xxxx'
+          position='xxxxx'
+          company='xxxxx'
+          city='xxxxx'
         />
       </div> 
     );
