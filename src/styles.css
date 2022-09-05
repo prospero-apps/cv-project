@@ -54,6 +54,9 @@ body {
 #preview-experience-panel,
 #preview-education-panel {
   background-color: lightgreen;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 #preview-header-panel {
@@ -73,6 +76,80 @@ body {
 
 #preview .panel-header {
   color: rgba(4, 70, 100, 0.877)
+}
+
+.data-input-simple,
+.data-input-area,
+.photo-label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.photo-label {
+  margin-top: 1rem;
+}
+
+.simple-input,
+.area-input {
+  width: 60%;
+  border: 2px solid black;
+}
+
+.simple-input {
+  width: 60%;
+  border: 0;
+  border-bottom: 2px solid black;
+}
+
+.simple-input:focus {
+  outline: 0;
+  border-bottom: 2px dashed black;
+}
+
+.area-input {
+  resize: none;
+}
+
+.area-input:focus {
+  outline: 0;
+  border: 2px dashed black;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.plus-button,
+.minus-button {
+  font-weight: bold;
+  font-size: 1.2rem;
+  border: 2px solid black;
+  border-radius: 20%;
+  min-width: 30px;
+  min-height: 30px;
+  width: 30px;
+  height: 30px;
+  color: white;
+}
+
+.plus-button {
+  background-color: green;
+}
+
+.plus-button:hover {
+  background-color: rgb(144, 236, 144);
+  color: black;
+}
+
+.minus-button {
+  background-color: red;  
+}
+
+.minus-button:hover {
+  background-color: rgb(233, 159, 159);
+  color: black;
 }
 
 
