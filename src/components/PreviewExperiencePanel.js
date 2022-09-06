@@ -5,17 +5,23 @@ import PanelHeader from './PanelHeader';
 
 class PreviewExperiencePanel extends Component {
   render() {
+    const experiencePosition = this.props.experiencePosition;
+    const experienceCompany = this.props.experienceCompany;
+    const experienceCity = this.props.experienceCity;
+    const experienceFrom = this.props.experienceFrom;
+    const experienceTo = this.props.experienceTo;
+
     return (
       <div id="preview-experience-panel">
         <PanelHeader
           title='Experience'
         />
         <DataPreviewExperience
-          from='xxxx'
-          to='xxxx'
-          position='xxxxx'
-          company='xxxxx'
-          city='xxxxx'
+          from={experienceFrom}
+          to={experienceTo}
+          position={experiencePosition}
+          company={experienceCompany}
+          city={experienceCity}
         />
       </div> 
     );

@@ -110,11 +110,12 @@ body {
 
 .area-input {
   resize: none;
+  border: 1px solid rgb(190, 190, 190);
 }
 
 .area-input:focus {
   outline: 0;
-  border: 2px dashed black;
+  border: 1px dashed rgb(190, 190, 190);
 }
 
 .plus-button,
@@ -155,6 +156,10 @@ body {
 }
 
 /* PREVIEW */
+.photo {
+  width: 100%;
+}
+
 .preview-name {
   font-size: 2.5rem;
   font-weight: bold;

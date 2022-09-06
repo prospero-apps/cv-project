@@ -5,22 +5,29 @@ import PanelHeader from './PanelHeader';
 
 class PreviewPersonalPanel extends Component {
   render() {
+    const photo = this.props.photo;
+    const address = this.props.address;
+    const phoneNumber = this.props.phoneNumber;
+    const email = this.props.email;
+
     return (
       <div id="preview-personal-panel">
+        {/* <img src={photo} alt="head" className='photo'/> */}
+        <img src={photo} alt="head" className='photo'/>
         <PanelHeader
           title='Personal Information'
         />
         <DataPreviewPersonal
           labelText='Address'
-          content='xxx'
+          content={address}
         />
         <DataPreviewPersonal
           labelText='Phone Number'
-          content='xxx'
+          content={phoneNumber}
         />
         <DataPreviewPersonal
           labelText='Email'
-          content='xxx'
+          content={email}
         />
       </div> 
     );
