@@ -7,7 +7,7 @@ body {
 /*  MAIN CONTAINER */
 #main-container {
   background-color: rgb(241, 210, 163);
-  height: 100vh;
+  height: 100%;
   width: 100%;
   padding: 0;
   display: grid;
@@ -41,6 +41,10 @@ body {
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 100px 1fr;
   gap: 10px;
+  max-width: 600px;
+  min-width: 400px;
+  height: 1200px;
+  max-height: 800px;
 }
 
 /* PANELS */
@@ -72,12 +76,13 @@ body {
 }
 
 .panel-header {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 
 #preview .panel-header {
-  color: rgba(4, 70, 100, 0.877)
+  color: rgba(4, 70, 100, 0.877);
+  border-bottom: 1px solid rgb(209, 204, 204);
 }
 
 .data-input-simple,

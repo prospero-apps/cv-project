@@ -39,7 +39,7 @@ class Container extends Component {
       phoneNumber: '(65)4455-55-54',
       email: 'christopher-blaire@gmail.com',
       jobPosition: 'Senior Web Developer',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id ligula efficitur, maximus magna vitae, porta nulla. Etiam auctor ex vitae elit facilisis ullamcorper. Sed aliquet dignissim sem. Mauris interdum a ante cursus tincidunt. Quisque in massa placerat, dignissim erat vel, posuere dolor. Fusce sed ex ac libero ornare porttitor. Cras vulputate libero nisl, consectetur bibendum justo molestie at. Suspendisse at metus molestie, tristique nisi et, congue orci. Nunc sit amet malesuada odio. Donec lobortis velit sapien, vitae rhoncus felis egestas ut. Donec aliquet porttitor feugiat. Curabitur vestibulum luctus rutrum. Cras nec mi odio. Donec eget massa ut leo lacinia tincidunt.',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id ligula efficitur, maximus magna vitae, porta nulla. Etiam auctor ex vitae elit facilisis ullamcorper. Sed aliquet dignissim sem. Mauris interdum a ante cursus tincidunt.',
       photo: image,  
       experiences: experiences, 
       educations: educations,
@@ -89,6 +89,18 @@ class Container extends Component {
     });
   }
 
+  removeExperience = (currentId) => {
+    this.setState({
+      experiences: this.state.experiences.filter((experience) => experience.id !== currentId),
+    })
+  }
+
+  removeEducation = (currentId) => {
+    this.setState({
+      educations: this.state.educations.filter((education) => education.id !== currentId),
+    })
+  }
+
   render() { 
     return (
       <div id="main-container">
@@ -109,6 +121,8 @@ class Container extends Component {
           handlePhoto={(src) => this.handlePhoto(src)}
           addExperience={this.addExperience}
           addEducation={this.addEducation}
+          removeExperience={(currentId) => this.removeExperience(currentId)}
+          removeEducation={(currentId) => this.removeEducation(currentId)}
         />
         <Preview
           firstName={this.state.firstName}

@@ -23,6 +23,14 @@ class Fill extends Component {
     this.props.addEducation();
   }
 
+  removeExperience = (currentId) => {
+    this.props.removeExperience(currentId);
+  }
+
+  removeEducation = (currentId) => {
+    this.props.removeEducation(currentId);
+  }
+
   render() {
     const firstName = this.props.firstName;
     const lastName = this.props.lastName;
@@ -64,6 +72,7 @@ class Fill extends Component {
                   experiences={experiences}
                   currentId={experience.id}
                   handleChange={(data, val) => this.handleChange(data, val)}
+                  removeExperience={(currentId) => this.removeExperience(currentId)}          
                 />
               </li>
               )
@@ -81,6 +90,7 @@ class Fill extends Component {
                   educations={educations}
                   currentId={education.id}
                   handleChange={(data, val) => this.handleChange(data, val)}
+                  removeEducation={(currentId) => this.removeEducation(currentId)}
                 />
               </li>
               )

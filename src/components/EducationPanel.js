@@ -8,6 +8,10 @@ class EducationPanel extends Component {
     this.props.handleChange(list, list);
   }  
 
+  removeEducation = () => {
+    this.props.removeEducation(this.props.currentId);
+  }
+
   render() {
     const educations = this.props.educations;
     const currentId = this.props.currentId;
@@ -21,7 +25,7 @@ class EducationPanel extends Component {
         <DataInputSimple labelText='Subject' content={currentItem.subject} handleChange={(val) => this.handleChange('subject', educations, currentItem, val)}/>
         <DataInputSimple labelText='From' content={currentItem.from} handleChange={(val) => this.handleChange('from', educations, currentItem, val)}/>
         <DataInputSimple labelText='To' content={currentItem.to} handleChange={(val) => this.handleChange('to', educations, currentItem, val)}/>
-        <button className='minus-button'>-</button>
+        <button onClick={this.removeEducation} className='minus-button'>-</button>
       </div> 
     );
   }

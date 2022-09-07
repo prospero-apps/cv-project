@@ -8,6 +8,10 @@ class ExperiencePanel extends Component {
     this.props.handleChange(list, list);
   }  
 
+  removeExperience = () => {
+    this.props.removeExperience(this.props.currentId);
+  }
+
   render() {
     const experiences = this.props.experiences;
     const currentId = this.props.currentId;
@@ -20,7 +24,7 @@ class ExperiencePanel extends Component {
         <DataInputSimple labelText='City' content={currentItem.city} handleChange={(val) => this.handleChange('city', experiences, currentItem, val)}/>
         <DataInputSimple labelText='From' content={currentItem.from} handleChange={(val) => this.handleChange('from', experiences, currentItem, val)}/>
         <DataInputSimple labelText='To' content={currentItem.to} handleChange={(val) => this.handleChange('to', experiences, currentItem, val)}/>
-        <button className='minus-button'>-</button>
+        <button onClick={this.removeExperience} className='minus-button'>-</button>
       </div> 
     );
   }

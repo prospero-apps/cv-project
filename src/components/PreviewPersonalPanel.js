@@ -12,7 +12,6 @@ class PreviewPersonalPanel extends Component {
 
     return (
       <div id="preview-personal-panel">
-        {/* <img src={photo} alt="head" className='photo'/> */}
         <img src={photo} alt="head" className='photo'/>
         <PanelHeader
           title='Personal Information'
