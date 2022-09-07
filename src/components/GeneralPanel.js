@@ -17,7 +17,7 @@ class GeneralPanel extends Component {
   render() {
     const jobPosition = this.props.jobPosition;
     const description= this.props.description;
-    const photo = this.props.photo;
+    // const photo = this.props.photo;
 
     return (
       <div id="general-panel">

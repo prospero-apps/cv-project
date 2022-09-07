@@ -15,6 +15,10 @@ class Fill extends Component {
     this.props.handlePhoto(src);
   }
 
+  addExperience = () => {
+    console.log('sss')
+  }
+
   render() {
     const firstName = this.props.firstName;
     const lastName = this.props.lastName;
@@ -24,17 +28,8 @@ class Fill extends Component {
     const jobPosition = this.props.jobPosition;
     const description = this.props.description;
     const photo = this.props.photo;
-    const experiencePosition = this.props.experiencePosition;
-    const experienceCompany = this.props.experienceCompany;
-    const experienceCity = this.props.experienceCity;
-    const experienceFrom = this.props.experienceFrom;
-    const experienceTo = this.props.experienceTo;
-    const educationUniversity = this.props.educationUniversity;
-    const educationCity = this.props.educationCity;
-    const educationDegree = this.props.educationDegree;
-    const educationSubject = this.props.educationSubject;;
-    const educationFrom = this.props.educationFrom;
-    const educationTo = this.props.educationTo;
+    const experiences = this.props.experiences;
+    const educations = this.props.educations;   
 
     return (
       <div id="fill">
@@ -55,14 +50,10 @@ class Fill extends Component {
         />
         <div className='panel-header-with-button'>
           <PanelHeader title='Experience'/>
-          <button className='plus-button'>+</button>
+          <button onClick={this.addExperience} className='plus-button'>+</button>
         </div>
         <ExperiencePanel
-          experiencePosition={experiencePosition}
-          experienceCompany={experienceCompany}
-          experienceCity={experienceCity}
-          experienceFrom={experienceFrom}
-          experienceTo={experienceTo}
+          experiences={experiences}
           handleChange={(data, val) => this.handleChange(data, val)}
         />
         <div className='panel-header-with-button'>
@@ -70,12 +61,7 @@ class Fill extends Component {
           <button className='plus-button'>+</button>
         </div>
         <EducationPanel
-          educationUniversity={educationUniversity}
-          educationCity={educationCity}
-          educationDegree={educationDegree}
-          educationSubject={educationSubject}
-          educationFrom={educationFrom}
-          educationTo={educationTo}
+          educations={educations}
           handleChange={(data, val) => this.handleChange(data, val)}
         />
       </div> 

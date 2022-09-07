@@ -1,27 +1,25 @@
 import React, { Component } from 'react';
 import '../styles.css';
-import PanelHeader from './PanelHeader';
 import DataInputSimple from './DataInputSimple';
 
-class ExperiencePanel extends Component {
-  handleChange = (data, newValue) => {
-    this.props.handleChange(data, newValue);
+class ExperiencePanel extends Component {  
+  handleChange = (field, list, index, value) => {
+    console.log(field, list, index, value)
+    list[index][field] = value;
+    this.props.handleChange(list, list);
   }  
 
   render() {
-    const experiencePosition = this.props.experiencePosition;
-    const experienceCompany = this.props.experienceCompany;
-    const experienceCity = this.props.experienceCity;
-    const experienceFrom = this.props.experienceFrom;
-    const experienceTo = this.props.experienceTo;
-
+    const experiences = this.props.experiences;
+    let currentIndex = experiences.length - 1;
+    
     return (
-      <div id="experience-panel">        
-        <DataInputSimple labelText='Position' content={experiencePosition} handleChange={(val) => this.handleChange('experiencePosition', val)}/>
-        <DataInputSimple labelText='Company' content={experienceCompany} handleChange={(val) => this.handleChange('experienceCompany', val)}/>
-        <DataInputSimple labelText='City' content={experienceCity} handleChange={(val) => this.handleChange('experienceCity', val)}/>
-        <DataInputSimple labelText='From' content={experienceFrom} handleChange={(val) => this.handleChange('experienceFrom', val)}/>
-        <DataInputSimple labelText='To' content={experienceFrom} handleChange={(val) => this.handleChange('experienceFrom', val)}/>
+      <div id="experience-panel">  
+        <DataInputSimple labelText='Position' content={experiences[currentIndex].position} handleChange={(val) => this.handleChange('position', experiences, currentIndex, val)}/>
+        <DataInputSimple labelText='Company' content={experiences[currentIndex].company} handleChange={(val) => this.handleChange('company', experiences, currentIndex, val)}/>
+        <DataInputSimple labelText='City' content={experiences[currentIndex].city} handleChange={(val) => this.handleChange('city', experiences, currentIndex, val)}/>
+        <DataInputSimple labelText='From' content={experiences[currentIndex].from} handleChange={(val) => this.handleChange('from', experiences, currentIndex, val)}/>
+        <DataInputSimple labelText='To' content={experiences[currentIndex].to} handleChange={(val) => this.handleChange('to', experiences, currentIndex, val)}/>
         <button className='minus-button'>-</button>
       </div> 
     );

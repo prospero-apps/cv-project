@@ -5,12 +5,8 @@ import PanelHeader from './PanelHeader';
 
 class PreviewEducationPanel extends Component {
   render() {
-    const educationUniversity = this.props.educationUniversity;
-    const educationCity = this.props.educationCity;
-    const educationDegree = this.props.educationDegree;
-    const educationSubject = this.props.educationSubject;
-    const educationFrom = this.props.educationFrom;
-    const educationTo = this.props.educationTo;
+    const educations = this.props.educations;
+    let currentIndex = educations.length - 1;
 
     return (
       <div id="preview-education-panel">
@@ -18,12 +14,12 @@ class PreviewEducationPanel extends Component {
           title='Education'
         />
         <DataPreviewEducation
-          from={educationFrom}
-          to={educationTo}
-          university={educationUniversity}
-          city={educationCity}
-          degree={educationDegree}
-          subject={educationSubject}
+          from={educations[currentIndex].from}
+          to={educations[currentIndex].to}
+          university={educations[currentIndex].university}
+          city={educations[currentIndex].city}
+          degree={educations[currentIndex].degree}
+          subject={educations[currentIndex].subject}
         />
       </div> 
     );

@@ -16,17 +16,8 @@ class Preview extends Component {
     const jobPosition = this.props.jobPosition;
     const description = this.props.description;
     const photo = this.props.photo;
-    const experiencePosition = this.props.experiencePosition;
-    const experienceCompany = this.props.experienceCompany;
-    const experienceCity = this.props.experienceCity;
-    const experienceFrom = this.props.experienceFrom;
-    const experienceTo = this.props.experienceTo;
-    const educationUniversity = this.props.educationUniversity;
-    const educationCity = this.props.educationCity;
-    const educationDegree = this.props.educationDegree;
-    const educationSubject = this.props.educationSubject;;
-    const educationFrom = this.props.educationFrom;
-    const educationTo = this.props.educationTo;
+    const experiences = this.props.experiences;
+    const educations = this.props.educations;
 
     return (
       <div id="preview">
@@ -46,19 +37,10 @@ class Preview extends Component {
             description={description}
           />
           <PreviewExperiencePanel
-            experiencePosition={experiencePosition}
-            experienceCompany={experienceCompany}
-            experienceCity={experienceCity}
-            experienceFrom={experienceFrom}
-            experienceTo={experienceTo}
+            experiences={experiences}
           />
           <PreviewEducationPanel
-            educationUniversity={educationUniversity}
-            educationCity={educationCity}
-            educationDegree={educationDegree}
-            educationSubject={educationSubject}
-            educationFrom={educationFrom}
-            educationTo={educationTo}
+            educations={educations}
           />
         </div>
       </div>
