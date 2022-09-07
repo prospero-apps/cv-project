@@ -5,6 +5,7 @@ import PreviewEducationPanel from './PreviewEducationPanel';
 import PreviewExperiencePanel from './PreviewExperiencePanel';
 import PreviewHeaderPanel from './PreviewHeaderPanel';
 import PreviewPersonalPanel from './PreviewPersonalPanel';
+import PanelHeader from './PanelHeader';
 
 class Preview extends Component {
   render() {
@@ -36,12 +37,36 @@ class Preview extends Component {
           <PreviewDescriptionPanel
             description={description}
           />
-          <PreviewExperiencePanel
-            experiences={experiences}
-          />
-          <PreviewEducationPanel
-            educations={educations}
-          />
+          <div className='panel-header'>
+            <PanelHeader title='Experience'/>
+          </div>
+          <ul>
+            {experiences.map((experience) => {
+              return (
+                <li key={experience.id}>
+                  <PreviewExperiencePanel
+                    experiences={experiences}
+                    currentId={experience.id}
+                  />
+                </li>
+                )
+            })}
+          </ul>
+          <div className='panel-header'>
+            <PanelHeader title='Education'/>
+          </div>
+          <ul>
+            {educations.map((education) => {
+              return (
+                <li key={education.id}>
+                  <PreviewEducationPanel
+                    educations={educations}
+                    currentId={education.id}
+                  />
+                </li>
+                )
+            })}
+          </ul>
         </div>
       </div>
     );

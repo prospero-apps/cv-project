@@ -201,6 +201,15 @@ body {
   font-weight: bold;
 }
 
+ul {
+  list-style-type: none;  
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 1rem;
+}
+
 
 /* MEDIA */
 @media only screen and (max-width: 600px) {

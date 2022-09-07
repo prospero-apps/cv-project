@@ -16,7 +16,11 @@ class Fill extends Component {
   }
 
   addExperience = () => {
-    console.log('sss')
+    this.props.addExperience();
+  }
+
+  addEducation = () => {
+    this.props.addEducation();
   }
 
   render() {
@@ -52,18 +56,36 @@ class Fill extends Component {
           <PanelHeader title='Experience'/>
           <button onClick={this.addExperience} className='plus-button'>+</button>
         </div>
-        <ExperiencePanel
-          experiences={experiences}
-          handleChange={(data, val) => this.handleChange(data, val)}
-        />
+        <ul>
+          {experiences.map((experience) => {
+            return (
+              <li key={experience.id}>
+                <ExperiencePanel
+                  experiences={experiences}
+                  currentId={experience.id}
+                  handleChange={(data, val) => this.handleChange(data, val)}
+                />
+              </li>
+              )
+          })}
+        </ul>
         <div className='panel-header-with-button'>
           <PanelHeader title='Education'/>
-          <button className='plus-button'>+</button>
+          <button onClick={this.addEducation} className='plus-button'>+</button>
         </div>
-        <EducationPanel
-          educations={educations}
-          handleChange={(data, val) => this.handleChange(data, val)}
-        />
+        <ul>
+          {educations.map((education) => {
+            return (
+              <li key={education.id}>
+                <EducationPanel
+                  educations={educations}
+                  currentId={education.id}
+                  handleChange={(data, val) => this.handleChange(data, val)}
+                />
+              </li>
+              )
+          })}
+        </ul>
       </div> 
     );
   }

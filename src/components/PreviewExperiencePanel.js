@@ -1,26 +1,23 @@
 import React, { Component } from 'react';
 import '../styles.css';
 import DataPreviewExperience from './DataPreviewExperience';
-import PanelHeader from './PanelHeader';
 
 class PreviewExperiencePanel extends Component {
   render() {
     const experiences = this.props.experiences;
-    let currentIndex = experiences.length - 1;
+    const currentId = this.props.currentId;
+    const currentItem = experiences.filter((listItem) => listItem.id === currentId)[0];
 
     return (
       <div id="preview-experience-panel">
-        <PanelHeader
-          title='Experience'
-        />
         <DataPreviewExperience
-          from={experiences[currentIndex].from}
-          to={experiences[currentIndex].to}
-          position={experiences[currentIndex].position}
-          company={experiences[currentIndex].company}
-          city={experiences[currentIndex].city}
+          from={currentItem.from}
+          to={currentItem.to}
+          position={currentItem.position}
+          company={currentItem.company}
+          city={currentItem.city}
         />
-      </div> 
+      </div>
     );
   }
 }
