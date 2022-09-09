@@ -1,20 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../styles.css';
 import PanelHeader from './PanelHeader';
 
-class PreviewDescriptionPanel extends Component {
-  render() {
-    const description = this.props.description;
+const PreviewDescriptionPanel = (props) => {
+  const description = props.description;
 
-    return (
-      <div id="preview-description-panel">
-        <PanelHeader
-          title='Description'
-        />
-        {description}
-      </div> 
-    );
-  }
+  return (
+    <div id="preview-description-panel">
+      <PanelHeader
+        title='Description'
+      />
+      {description}
+    </div> 
+  );
 }
 
 export default PreviewDescriptionPanel;

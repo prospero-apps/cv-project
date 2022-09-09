@@ -1,27 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../styles.css';
 
-class DataInputSimple extends Component {
-  handleChange = (e) => {
-    this.props.handleChange(e.target.value);
+const DataInputSimple = (props) => {
+  const handleChange = (e) => {
+    props.handleChange(e.target.value);
   }
 
-  render() {
-    const labelText = this.props.labelText;
-    const content = this.props.content;
+  const labelText = props.labelText;
+  const content = props.content;
   
-    return (
-      <label className="data-input-simple">
-        {labelText}
-        <input 
-          type="text" 
-          className='simple-input' 
-          value={content}
-          onChange={this.handleChange}
-        />
-      </label>
-    );
-  }
+  return (
+    <label className="data-input-simple">
+      {labelText}
+      <input 
+        type="text" 
+        className='simple-input' 
+        value={content}
+        onChange={handleChange}
+      />
+    </label>
+  );
 }
 
 export default DataInputSimple;

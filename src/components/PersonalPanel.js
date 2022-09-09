@@ -1,34 +1,32 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../styles.css';
 import DataInputArea from './DataInputArea';
 import DataInputSimple from './DataInputSimple';
 import PanelHeader from './PanelHeader';
 
-class PersonalPanel extends Component {
-  handleChange = (data, newValue) => {
-    this.props.handleChange(data, newValue);
+const PersonalPanel = (props) => {
+  const handleChange = (data, newValue) => {
+    props.handleChange(data, newValue);
   }  
 
-  render() {
-    const firstName = this.props.firstName;
-    const lastName = this.props.lastName;
-    const address = this.props.address;
-    const phoneNumber = this.props.phoneNumber;
-    const email = this.props.email;
+  const firstName = props.firstName;
+  const lastName = props.lastName;
+  const address = props.address;
+  const phoneNumber = props.phoneNumber;
+  const email = props.email;
 
-    return (
-      <div id="personal-panel">
-        <PanelHeader
-          title='Personal Information'
-        />
-        <DataInputSimple labelText='First Name' content={firstName} handleChange={(val) => this.handleChange('firstName', val)}/>
-        <DataInputSimple labelText='Last Name' content={lastName} handleChange={(val) => this.handleChange('lastName', val)}/>
-        <DataInputArea labelText='Address' content={address} handleChange={(val) => this.handleChange('address', val)}/>
-        <DataInputSimple labelText='Phone Number' content={phoneNumber} handleChange={(val) => this.handleChange('phoneNumber', val)}/>
-        <DataInputSimple labelText='Email' content={email} handleChange={(val) => this.handleChange('email', val)}/>
-      </div> 
-    );
-  }
+  return (
+    <div id="personal-panel">
+      <PanelHeader
+        title='Personal Information'
+      />
+      <DataInputSimple labelText='First Name' content={firstName} handleChange={(val) => handleChange('firstName', val)}/>
+      <DataInputSimple labelText='Last Name' content={lastName} handleChange={(val) => handleChange('lastName', val)}/>
+      <DataInputArea labelText='Address' content={address} handleChange={(val) => handleChange('address', val)}/>
+      <DataInputSimple labelText='Phone Number' content={phoneNumber} handleChange={(val) => handleChange('phoneNumber', val)}/>
+      <DataInputSimple labelText='Email' content={email} handleChange={(val) => handleChange('email', val)}/>
+    </div> 
+  );
 }
 
 export default PersonalPanel;
